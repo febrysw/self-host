@@ -10,9 +10,9 @@
 # Replace this with your domain name.
 *.home.fedeaja.id {
     # You don't need this if you host on the public Internet (e.g. with a public IP)
-    tls {
-        dns cloudflare {env.DNS_PROVIDER_TOKEN}
-    }
+    #tls {
+    #    dns cloudflare {env.DNS_PROVIDER_TOKEN}
+    #}
 
     @paperless host paperless.home.fedeaja.id
     handle @paperless {
