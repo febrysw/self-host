@@ -1,14 +1,14 @@
-*.goselfhost.com {
+*.fedeaja.id {
     tls {
-        dns cloudflare {env.DNS_PROVIDER_TOKEN}
+        dns cloudflare {Gh-C0U1ZsvyyR6I1KXYR85dkYi9ktFCDgRjsFSAd}
     }
 
-    @vaultwarden host vault.goselfhost.com
+    @vaultwarden host vault.fedeaja.id
     handle @vaultwarden {
         reverse_proxy vaultwarden:80
     }
 
-    @memos host memos.goselfhost.com
+    @memos host memos.fedeaja.id
     handle @memos {
         reverse_proxy memos:5230
     }

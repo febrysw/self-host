@@ -1,5 +1,3 @@
-version: "3"
-
 volumes:
   vaultwarden-data:
   memos-data:
@@ -17,7 +15,7 @@ services:
       - caddy-data:/data
       - ./Caddyfile:/etc/caddy/Caddyfile
     environment:
-      - DNS_PROVIDER_TOKEN=YOUR_TOKEN
+      - DNS_PROVIDER_TOKEN=Gh-C0U1ZsvyyR6I1KXYR85dkYi9ktFCDgRjsFSAd
 
   vaultwarden:
     image: "vaultwarden/server"
