@@ -1,12 +1,12 @@
-// (authenticate) {
-//     reverse_proxy /outpost.goauthentik.io/* authentik-server:9000
+# (authenticate) {
+#     reverse_proxy /outpost.goauthentik.io/* authentik-server:9000
 
-//     forward_auth authentik-server:9000 {
-//         uri /outpost.goauthentik.io/auth/caddy
-//         copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-//         trusted_proxies private_ranges
-//     }
-// }
+#     forward_auth authentik-server:9000 {
+#         uri /outpost.goauthentik.io/auth/caddy
+#         copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
+#         trusted_proxies private_ranges
+#     }
+# }
 # Replace this with your domain name.
 *.home.fedeaja.id {
     # You don't need this if you host on the public Internet (e.g. with a public IP)
