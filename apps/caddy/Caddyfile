@@ -1,20 +1,20 @@
-(authenticate) {
-    reverse_proxy /outpost.goauthentik.io/* authentik-server:9000
+// (authenticate) {
+//     reverse_proxy /outpost.goauthentik.io/* authentik-server:9000
 
-    forward_auth authentik-server:9000 {
-        uri /outpost.goauthentik.io/auth/caddy
-        copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-        trusted_proxies private_ranges
-    }
-}
+//     forward_auth authentik-server:9000 {
+//         uri /outpost.goauthentik.io/auth/caddy
+//         copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
+//         trusted_proxies private_ranges
+//     }
+// }
 # Replace this with your domain name.
-*.home.easyselfhost.com {
+*.home.fedeaja.id {
     # You don't need this if you host on the public Internet (e.g. with a public IP)
     tls {
         dns cloudflare {env.DNS_PROVIDER_TOKEN}
     }
 
-    @paperless host paperless.home.easyselfhost.com
+    @paperless host paperless.home.fedeaja.id
     handle @paperless {
         # Uncomment below for authentication using Authentik
         # import authenticate
@@ -26,37 +26,37 @@
         # }
     }
 
-    @filebrowser host files.home.easyselfhost.com
+    @filebrowser host files.home.fedeaja.id
     handle @filebrowser {
         reverse_proxy filebrowser:80
     }
 
-    @jellyfin host media.home.easyselfhost.com
+    @jellyfin host media.home.fedeaja.id
     handle @jellyfin {
         reverse_proxy jellyfin:8096
     }
 
-    @pyload host pyload.home.easyselfhost.com
+    @pyload host pyload.home.fedeaja.id
     handle @pyload {
         reverse_proxy pyload:8000
     }
 
-    @adguard host adguard.home.easyselfhost.com
+    @adguard host adguard.home.fedeaja.id
     handle @adguard {
         reverse_proxy adguard:3000
     }
 
-    @kopia host kopia.home.easyselfhost.com
+    @kopia host kopia.home.fedeaja.id
     handle @kopia {
         reverse_proxy kopia:80
     }
 
-    @immich host immich.home.easyselfhost.com
+    @immich host immich.home.fedeaja.id
     handle @immich {
         reverse_proxy immich-server:3001
     }
 
-    @stirling-pdf host pdf.home.easyselfhost.com
+    @stirling-pdf host pdf.home.fedeaja.id
     handle @stirling-pdf {
         # Uncomment below to enable authentication
         # import authenticate
@@ -64,48 +64,48 @@
         reverse_proxy stirling-pdf:8080
     }
 
-    @chat host chat.home.easyselfhost.com
+    @chat host chat.home.fedeaja.id
     handle @chat {
         reverse_proxy open-webui:8080
     }
 
     # optional. uncomment it if you have other ollama clients
-    # @ollama host ollama.home.easyselfhost.com
+    # @ollama host ollama.home.fedeaja.id
     # handle @ollama {
     #     reverse_proxy ollama:11434
     # }
 
-    @webtop host webtop.home.easyselfhost.com
+    @webtop host webtop.home.fedeaja.id
     handle @webtop {
         reverse_proxy webtop:3000
     }
 
-    @bookstack host bookstack.home.easyselfhost.com
+    @bookstack host bookstack.home.fedeaja.id
     handle @bookstack {
         reverse_proxy bookstack:80
     }
 
-    @outline host outline.home.easyselfhost.com
+    @outline host outline.home.fedeaja.id
     handle @outline {
         reverse_proxy outline:3000
     }
 
-    @affine host affine.home.easyselfhost.com
+    @affine host affine.home.fedeaja.id
     handle @affine {
         reverse_proxy affine:3010
     }
 
-    @docmost host docmost.home.easyselfhost.com
+    @docmost host docmost.home.fedeaja.id
     handle @docmost {
         reverse_proxy docmost:3000
     }
 
-    @trilium host trilium.home.easyselfhost.com
+    @trilium host trilium.home.fedeaja.id
     handle @trilium {
         reverse_proxy trilium:8080
     }
 
-    @authentik host authentik.home.easyselfhost.com
+    @authentik host authentik.home.fedeaja.id
     handle @authentik {
         reverse_proxy authentik-server:9000
     }
